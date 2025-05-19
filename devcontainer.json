@@ -1,0 +1,23 @@
+{
+  "name": "GCBF+ Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "features": {
+    "ghcr.io/devcontainers/features/conda:1": {
+      "installMiniconda": true,
+      "environment": "gcbfplus",
+      "pythonVersion": "3.10"
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt && pip install -e .",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/envs/gcbfplus/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  }
+}
